@@ -1,4 +1,47 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying all pages.
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site will use a
+ * different template.
+ *
+ * @package eagle2
+ */
+
+get_header(); ?>
+
+<div id="body">
+	<div id="page">
+		<div class="page-wrapper">
+			<main class="main-content" role="main">
+				<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php the_content(); ?>
+					<?php get_template_part( 'assets/gallery' ) ?>
+
+					<?php
+						wp_link_pages( array(
+							'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'test' ),
+							'after'  => '</div>',
+						) );
+					?>
+
+					<?php
+						if ( comments_open() || get_comments_number() ) :
+							comments_template();
+						endif;
+					?>
+
+				<?php endwhile; ?>
+			</main>
+			<aside class="sidebar">
+				Sidebar ...
+			</aside>
+		</div>
+	</div>
+</div>
 
 <div id="body">
 	<div class="b2">

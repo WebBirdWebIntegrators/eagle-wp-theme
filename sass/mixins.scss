@@ -1,32 +1,27 @@
 @mixin color1() {
-	color: $color1;
+  color: $color1;
 }
 
 @mixin color2() {
-	color: $color2;
+  color: $color2;
 }
 
-@mixin img1() {}
+@mixin img1() {
+}
 
 @mixin border1() {
-	border: solid;
-	border-style: solid;
-	border-width: 1px;
-	border-color: mix($white,$color1,85%);
-	border-radius: 0px;
-}
-
-@mixin block1() {
-	padding: 20px;
-	background-color: mix($white,$color1,98%);
+  border: 1px solid mix($white, $color1, 85%);
+  border-radius: 0;
 }
 
 @mixin fontawesome() {
-	font-family: 'fontawesome';
-	font-style: normal;
-	font-weight: normal;
-	color: mix($white,$color2,50%);
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  font-family: "fontawesome";
+  font-weight: normal;
+  font-style: normal;
+
+  color: mix($white, $color2, 50%);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: auto;
 }

@@ -1,0 +1,398 @@
+.sidebar-default {
+  position: relative;
+
+  margin-bottom: 2em;
+  padding: 0;
+  padding-bottom: 1em;
+  //padding-right: 17.5%;
+
+  list-style: none;
+
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: mix($white, $color1, 85%);
+
+  h2 {
+    @include font2-bold;
+
+    font-size: 1.5em;
+
+    color: $color1;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    border-bottom: 0;
+  }
+
+  &.widget_search {
+
+    input[type="text"] {
+      line-height: 1;
+
+      float: left;
+
+      width: 65%;
+      margin: 0;
+      margin-right: 5%;
+
+      border: 0;
+      background-color: mix($white, $color1, 70%);
+    }
+
+    input[type="submit"] {
+      float: right;
+
+      width: 30%;
+      padding-top: 11px;
+      padding-bottom: 12px;
+
+      color: $color1;
+      background-color: $white;
+    }
+  }
+
+  &.widget_recent_entries,
+  &.widget_recent_comments,
+  &.widget_archive,
+  &.widget_categories,
+  &.widget_meta {
+
+    ul {
+      padding: 0;
+
+      list-style: none;
+
+      li {
+        margin: 0;
+        padding: 0;
+        padding-top: .5em;
+        padding-bottom: .5em;
+
+        list-style-type: none;
+
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: mix($white, $color1, 90%);
+
+        &:first-of-type {
+          padding-top: 0;
+        }
+
+        &:last-of-type {
+          padding-bottom: 0;
+
+          border-bottom: 0;
+        }
+
+        a {
+          display: inline-block;
+
+          padding: 0;
+
+          text-decoration: none;
+
+          &:hover {
+            color: $color2;
+          }
+        }
+      }
+    }
+  }
+
+  &.categories {
+    h2 {
+      color: $color1;
+
+      &:before {
+        //content: '\f0b1';
+        //color: $color2;
+      }
+    }
+
+    a {
+      color: $color2;
+
+      &:hover {
+        color: $color1;
+      }
+    }
+
+    ul {
+      li {
+        ul.children {
+          overflow: hidden;
+
+          margin: 0;
+          padding: 0;
+
+          li {
+            margin: 0;
+            padding: 0;
+
+            &:before {
+              @include fontawesome;
+
+              margin-right: 7px;
+              margin-left: 7px;
+
+              content: "\f105";
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.gform_widget {
+    position: relative;
+    margin: 0;
+    padding-bottom: 50px;
+    color: $white;
+    background-color: $color2;
+
+    h2 {
+      color: $white;
+    }
+
+    .gform_wrapper {
+      position: relative;
+
+      .gform_heading {
+        position: relative;
+
+        h3 {
+          color: inherit;
+        }
+
+        .gform_description {
+          color: inherit;
+        }
+      }
+
+      .gform_body {
+        position: relative;
+
+        ul {
+          position: relative;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+
+          li {
+            margin: 0;
+            margin-bottom: 1em;
+            padding: 0;
+            list-style-type: none;
+
+            &:last-of-type {
+              margin: 0;
+            }
+
+            label {
+              color: inherit;
+            }
+
+            .ginput_container {
+              position: relative;
+
+              span {
+
+                input {
+                  margin: 0;
+                  border-color: $white;
+                }
+
+                label {
+                  color: $white;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .gform_footer {
+        text-align: right;
+
+        input[type="submit"] {
+          display: inline-block;
+          @include font1-bold;
+          color: $color2;
+          border-color: $white;
+          background-color: $white;
+          transition: .3s ease-in-out;
+
+          &:hover {
+            color: $white;
+            border-color: $color2;
+            background-color: $color2;
+          }
+        }
+      }
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      overflow: hidden;
+
+      margin: 0;
+      margin-bottom: .5em;
+      padding: 0;
+
+      list-style-type: none;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        text-decoration: none;
+        //color: inherit;
+
+        &:hover {
+          color: $color2;
+        }
+      }
+
+      .post-date {
+        font-size: .65em;
+
+        position: relative;
+        top: -2px;
+
+        display: inline-block;
+
+        margin-right: 10px;
+        padding: 3px;
+        padding-right: 6px;
+        padding-left: 6px;
+
+        border-radius: 2px;
+        //line-height: 1.0;
+        background-color: rgba($color1, .05);
+      }
+    }
+  }
+
+  .gform_wrapper {
+    overflow: hidden;
+
+    .gform_description {
+      line-height: 1.50em;
+
+      color: mix($white, $color1, 25%);
+    }
+
+    .gform_body {
+      overflow: hidden;
+
+      margin: 0;
+      margin-bottom: 2em;
+      padding: 0;
+    }
+
+    ul {
+      li {
+        overflow: hidden;
+
+        margin-bottom: 1.5em;
+
+        label {
+          @include font1-regular;
+
+          font-size: 1em;
+
+          color: $color1;
+        }
+
+        input[type="text"],
+        textarea {
+          background-color: $white;
+        }
+
+        .gfield_description {
+          font-size: 1em;
+
+          overflow: hidden;
+
+          margin: 0;
+          margin-bottom: .75em;
+          padding: 0;
+
+          color: mix($white, $color1, 45%);
+
+          &.validation_message {
+            @include font1-bold;
+
+            font-size: .8em;
+
+            overflow: hidden;
+
+            margin: 0;
+            margin-top: .5em;
+            padding: .3em;
+            padding-right: .5em;
+            padding-left: .5em;
+
+            text-transform: uppercase;
+
+            color: $white;
+            border-radius: 2px;
+            background-color: $color2;
+          }
+        }
+
+        .ginput_container {
+          label {
+            font-size: .8em;
+
+            margin: 0;
+            margin-top: .30em;
+            padding: 0;
+
+            color: mix($white, $color1, 40%);
+          }
+
+          ul.gfield_checkbox {
+            overflow: hidden;
+
+            margin: 0;
+            padding: 0;
+
+            list-style: none;
+
+            li {
+              margin: 0;
+              padding: 0;
+
+              list-style-type: none;
+
+              input {
+                font-size: 1em;
+
+                margin: 0;
+                padding: 0;
+              }
+
+              label {
+                font-size: 1em;
+
+                margin: 0;
+                padding: 0;
+
+                color: $color1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

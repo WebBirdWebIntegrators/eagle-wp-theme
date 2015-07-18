@@ -30,9 +30,9 @@ acf_add_local_field_group(array (
 			'disabled' => 0,
 		),
 		array (
-			'key' => 'field_' . $name_path . 'content',
+			'key' => 'field_' . $name_path . '__content',
 			'label' => __('Content', 'eagle'),
-			'name' => $name_path . 'content',
+			'name' => $name_path . '__content',
 			'type' => 'wysiwyg',
 			'instructions' => __('Set your content', 'eagle'),
 			'required' => 0,

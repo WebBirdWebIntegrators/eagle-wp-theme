@@ -1,0 +1,15 @@
+{
+  "transport": "sftp",
+  "hostname": "eagletheme.webbird.be",
+  "port": "22",
+  "username": "eaglethemewebbird",
+  "password": "bYdkaSwc",
+  "target": "/srv/users/eaglethemewebbird/apps/eaglethemewebbirdbe/public/wp-content/themes/eagle2",
+  "uploadOnSave": false,
+  "ignore": [
+    ".git/**",
+    ".remote-sync.json",
+    "node_modules/**",
+    "node_modules/**/.*"
+  ]
+}

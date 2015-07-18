@@ -9,27 +9,6 @@ acf_add_local_field_group(array (
 	'title' => __('Google Settings','eagle'),
 	'fields' => array (
 		array (
-			'key' => 'field_'. $name_path . 'google_site_verification_html_tag_id',
-			'label' => 'Google Site Verification HTML Tag ID',
-			'name' => $name_path . 'google_site_verification_html_tag_id',
-			'type' => 'text',
-			'instructions' => __('Enter your Google Site Verification HTML Tag ID.','eagle'),
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array (
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'maxlength' => '',
-			'readonly' => 0,
-			'disabled' => 0,
-		),
-		array (
 			'key' => 'field_' . $name_path . 'google_analytics_tracking_id',
 			'label' => __('Google Analytics Tracking ID','eagle'),
 			'name' => $name_path . 'google_analytics_tracking_id',
@@ -112,28 +91,18 @@ endif;
 */
 
 function wb_google_settings_wp_head() {
-	
-	if( get_field('ts_google_setting__google_site_verification_html_tag_id', 'option') ) :
-		
-		$ts_google_setting__google_site_verification_html_tag_id = get_field('ts_google_setting__google_site_verification_html_tag_id', 'option');
-		
-		echo '<!-- Google Site Verification HTML Tag ID -->';
-		echo '<meta name="google-site-verification" content="' . $ts_google_setting__google_site_verification_html_tag_id . '" />';
-	
-	endif;
-	
-	
+
 	if( is_front_page() ) :
-	
+
 		if( get_field('ts_google_setting__google_corporate_contacts_code', 'option') ) :
-			
+
 			echo '<!-- Google Corporate Contact Code -->';
 			echo get_field('ts_google_setting__google_corporate_contacts_code', 'option');
-		
+
 		endif;
-	
+
 	endif;
-	
+
 }
 
 add_action('wp_head','wb_google_settings_wp_head');

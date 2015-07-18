@@ -2,7 +2,7 @@
 
 if( function_exists('acf_add_local_field_group') ):
 
-$name_path = 'wbts__custom_body_code';
+$name_path = 'wb_ts__custom_body_code';
 
 acf_add_local_field_group(array (
 	'key' => 'group_' . $name_path,

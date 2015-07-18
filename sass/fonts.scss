@@ -1,194 +1,282 @@
-@mixin font-Default-Settings
-{
-    font-weight: normal;
-    font-style: normal;
+$font-db: "weight-enabled";     // Variables: weight-disabled or weight-enabled
 
-    margin: 0;
-    padding: 0;
+$font1: "Raleway";
+$font2: "Raleway";
 
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+@mixin base-font-settings {
+  font-weight: normal;
+  font-style: normal;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
 }
 
 // Font 1
 
-@mixin font1-Ultra-Light {
-	@include font-Default-Settings;
-	font-family: $font1, $font-Default-Font-Family;
-	font-weight: 100;
+@mixin font1-ultra-light {
+  @include base-font-settings;
+
+  font-family: $font1, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 100;
+  }
 }
 
-@mixin font1-Ultra-Light-Italic {
-	@include font-Default-Settings;
-	font-family: $font1, $font-Default-Font-Family;
-	font-weight: 100;
-	font-style: italic;
+@mixin font1-ultra-light-italic {
+  @include base-font-settings;
+
+  font-family: $font1, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 100;
+    font-style: italic;
+  }
 }
 
-@mixin font1-Light {
-	@include font-Default-Settings;
-	font-family: $font1, $font-Default-Font-Family;
-	font-weight: 300;
+@mixin font1-light {
+  @include base-font-settings;
+
+  font-family: $font1, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 300;
+  }
 }
 
-@mixin font1-Light-Italic {
-	@include font-Default-Settings;
-	font-family: $font1, $font-Default-Font-Family;
-	font-weight: 300;
-	font-style: italic;
+@mixin font1-light-italic {
+  @include base-font-settings;
+
+  font-family: $font1, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 300;
+    font-style: italic;
+  }
 }
 
-@mixin font1-Regular {
-	@include font-Default-Settings;
-	font-family: $font1, $font-Default-Font-Family;
-	font-weight: 400;
+@mixin font1-regular {
+  $font1-regular: "";
+  @include base-font-settings;
+
+  font-family: $font1-regular, $font1, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 400;
+  }
 }
 
-@mixin font1-Regular-Italic {
-	@include font-Default-Settings;
-	font-family: $font1, $font-Default-Font-Family;
-	font-weight: 400;
-	font-style: italic;
+@mixin font1-regular-italic {
+  $font1-regular-italic: "";
+  @include base-font-settings;
+
+  font-family: $font1-regular-italic, $font1, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 400;
+    font-style: italic;
+  }
 }
 
-@mixin font1-Medium {
-	@include font-Default-Settings;
-	font-family: $font1, $font-Default-Font-Family;
-	font-weight: 500;
+@mixin font1-medium {
+  @include base-font-settings;
+
+  font-family: $font1, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 500;
+  }
 }
 
-@mixin font1-Medium-Italic {
-	@include font-Default-Settings;
-	font-family: $font1, $font-Default-Font-Family;
-	font-weight: 500;
-	font-style: italic;
+@mixin font1-medium-italic {
+  @include base-font-settings;
+
+  font-family: $font1, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 500;
+    font-style: italic;
+  }
 }
 
-@mixin font1-Bold {
-	@include font-Default-Settings;
-	font-family: $font1, $font-Default-Font-Family;
-	font-weight: 700;
+@mixin font1-bold {
+  @include base-font-settings;
+
+  font-family: $font1, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 700;
+  }
 }
 
-@mixin font1-Bold-Italic {
-	@include font-Default-Settings;
-	font-family: $font1, $font-Default-Font-Family;
-	font-style: italic;
+@mixin font1-bold-italic {
+  @include base-font-settings;
+
+  font-family: $font1, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 700;
+    font-style: italic;
+  }
 }
 
-@mixin font1-Extra-Bold {
-	@include font-Default-Settings;
-	font-family: $font1, $font-Default-Font-Family;
-	font-weight: 900;
+@mixin font1-extra-bold {
+  @include base-font-settings;
+
+  font-family: $font1, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 900;
+  }
 }
 
-@mixin font1-Extra-Bold-Italic {
-	@include font-Default-Settings;
-	font-family: $font1, $font-Default-Font-Family;
-	font-weight: 900;
-	font-style: italic;
+@mixin font1-extra-bold-italic {
+  @include base-font-settings;
+
+  font-family: $font1, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 900;
+    font-style: italic;
+  }
 }
 
-@mixin font1-Black {
-	@include font-Default-Settings;
-	font-family: $font1, $font-Default-Font-Family;
+@mixin font1-black {
+  @include base-font-settings;
+
+  font-family: $font1, $base-font-family;
+  @if $font-db == "weight-enabled" {
+  }
 }
 
-@mixin font1-Black-Italic {
-	@include font-Default-Settings;
-	font-family: $font1, $font-Default-Font-Family;
-	font-style: italic;
+@mixin font1-black-italic {
+  @include base-font-settings;
+
+  font-family: $font1, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-style: italic;
+  }
 }
 
 
 // Font 2
 
-@mixin font2-Ultra-Light {
-	@include font-Default-Settings;
-	font-family: $font2, $font-Default-Font-Family;
-	font-weight: 100;
+@mixin font2-ultra-light {
+  @include base-font-settings;
+
+  font-family: $font2, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 100;
+  }
 }
 
-@mixin font2-Ultra-Light-Italic {
-	@include font-Default-Settings;
-	font-family: $font2, $font-Default-Font-Family;
-	font-weight: 100;
-	font-style: italic;
+@mixin font2-ultra-light-italic {
+  @include base-font-settings;
+
+  font-family: $font2, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 100;
+    font-style: italic;
+  }
 }
 
-@mixin font2-Light {
-	@include font-Default-Settings;
-	font-family: $font2, $font-Default-Font-Family;
-	font-weight: 300;
+@mixin font2-light {
+  @include base-font-settings;
+
+  font-family: $font2, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 300;
+  }
 }
 
-@mixin font2-Light-Italic {
-	@include font-Default-Settings;
-	font-family: $font2, $font-Default-Font-Family;
-	font-weight: 300;
-	font-style: italic;
+@mixin font2-light-italic {
+  @include base-font-settings;
+
+  font-family: $font2, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 300;
+    font-style: italic;
+  }
 }
 
-@mixin font2-Regular {
-	@include font-Default-Settings;
-	font-family: $font2, $font-Default-Font-Family;
-	font-weight: 400;
+@mixin font2-regular {
+  @include base-font-settings;
+
+  font-family: $font2, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 400;
+  }
 }
 
-@mixin font2-Regular-Italic {
-	@include font-Default-Settings;
-	font-family: $font2, $font-Default-Font-Family;
-	font-weight: 400;
-	font-style: italic;
+@mixin font2-regular-italic {
+  @include base-font-settings;
+
+  font-family: $font2, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 400;
+    font-style: italic;
+  }
 }
 
-@mixin font2-Medium {
-	@include font-Default-Settings;
-	font-family: $font2, $font-Default-Font-Family;
-	font-weight: 600;
+@mixin font2-medium {
+  @include base-font-settings;
+
+  font-family: $font2, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 600;
+  }
 }
 
-@mixin font2-Medium-Italic {
-	@include font-Default-Settings;
-	font-family: $font2, $font-Default-Font-Family;
-	font-weight: 600;
-	font-style: italic;
+@mixin font2-medium-italic {
+  @include base-font-settings;
+
+  font-family: $font2, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 600;
+    font-style: italic;
+  }
 }
 
-@mixin font2-Bold {
-	@include font-Default-Settings;
-	font-family: $font2, $font-Default-Font-Family;
-	font-weight: 700;
+@mixin font2-bold {
+  @include base-font-settings;
+
+  font-family: $font2, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 700;
+  }
 }
 
-@mixin font2-Bold-Italic {
-	@include font-Default-Settings;
-	font-family: $font2, $font-Default-Font-Family;
-	font-weight: 700;
-	font-style: italic;
+@mixin font2-bold-italic {
+  @include base-font-settings;
+
+  font-family: $font2, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 700;
+    font-style: italic;
+  }
 }
 
-@mixin font2-Extra-Bold {
-	@include font-Default-Settings;
-	font-family: $font2, $font-Default-Font-Family;
-	font-weight: 900;
+@mixin font2-extra-bold {
+  @include base-font-settings;
+
+  font-family: $font2, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 900;
+  }
 }
 
-@mixin font2-Extra-Bold-Italic {
-	@include font-Default-Settings;
-	font-family: $font2, $font-Default-Font-Family;
-	font-weight: 900;
-	font-style: italic;
+@mixin font2-extra-bold-italic {
+  @include base-font-settings;
+
+  font-family: $font2, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-weight: 900;
+    font-style: italic;
+  }
 }
 
-@mixin font2-Black {
-	@include font-Default-Settings;
-	font-family: $font2, $font-Default-Font-Family;
+@mixin font2-black {
+  @include base-font-settings;
+
+  font-family: $font2, $base-font-family;
+  @if $font-db == "weight-enabled" {
+  }
 }
 
-@mixin font2-Black-Italic {
-	@include font-Default-Settings;
-	font-family: $font2, $font-Default-Font-Family;
-	font-style: italic;
+@mixin font2-black-italic {
+  @include base-font-settings;
+
+  font-family: $font2, $base-font-family;
+  @if $font-db == "weight-enabled" {
+    font-style: italic;
+  }
 }

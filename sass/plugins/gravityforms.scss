@@ -1,193 +1,143 @@
-/*
-Plugin Gravity Forms
-Support & documentation: http://www.gravityhelp.com/support/
-*/
-
 @mixin gf-border1 {
-	border-style: solid;
-	border-width: 1px;
-	border-color: mix($white,$red,80%);
-	border-radius: 3px;
-	color: $red;
-	background-color: mix($white,$red,90%);
+  color: $color2;
+  border-width: 1px;
+  border-style: solid;
+  border-color: mix($white, $color2, 80%);
+  border-radius: 3px;
+  background-color: mix($white, $color2, 90%);
 }
 
 .gform_wrapper {
+  .gform_heading {
+    span.gform_description {
+      display: block;
 
-	.gform_heading {
+      padding-bottom: 30px;
+    }
+  }
 
-		h3 {}
+  .validation_error {
+    @include gf-border1;
 
-		span.gform_description {
-			display: block;
-			padding-bottom: 30px;
-		}
-	}
+    margin-bottom: 20px;
+    padding: 10px;
+  }
 
-	.validation_error {
-		margin-bottom: 20px;
-		padding: 10px;
-		@include gf-border1;
-	}
+  .gform_body {
+    ul.gform_fields {
+      margin: 0;
+      padding: 0;
 
-	.gform_body {
+      list-style: none;
 
-		ul.gform_fields {
-			margin: 0px;
-			padding: 0px;
-			list-style: none;
+      li {
+        margin: 0;
+        margin-bottom: 15px;
+        padding: 0;
 
-			&.top_label {}
-			&.description_above {}
-			&.description_below {}
+        &.gfield {
+          &.gfield_error {
+            &.gfield_contains_required {
+              label {
+                color: $color2;
+              }
 
-			li {
-				margin: 0px;
-				margin-bottom: 15px;
-				padding: 0px;
+              input {
+                @include gf-border1;
+              }
 
-				&.gfield {
+              .ginput_container {
+                label {
+                  color: $color2 !important;
+                }
+              }
+            }
+          }
 
-					&.gfield_contains_required {
-					}
+          label {
+            .gfield_required {
+              margin-left: 3px;
 
-					&.gfield_error {
+              color: $color2;
+            }
+          }
 
-						&.gfield_contains_required {
+          .ginput_complex {
+            overflow: hidden;
 
-							label {
-								color: $red;
-							}
+            label {
+              font-size: 80%;
+              line-height: normal;
 
-							input {
-								@include gf-border1;
-							}
+              display: block;
 
-							.ginput_container {
+              margin-top: 5px;
+              margin-bottom: 10px;
 
-								label {
-									color: $red !important;
-								}
-							}
-						}
+              color: mix($white, $color1, 65%);
+            }
 
-					}
+            .ginput_left {
+              float: left;
 
-					label {
+              width: 45%;
+            }
 
-						.gfield_required {
-							margin-left: 3px;
-							color: $red;
-						}
-					}
+            .ginput_right {
+              display: inline;
+              float: right;
 
-					.ginput_complex {
-						overflow: hidden;
+              width: 45%;
+            }
+          }
 
-						label {
-							display: block;
-							margin-top: 5px;
-							margin-bottom: 10px;
-							font-size: 80%;
-							line-height: normal;
-							color: mix($white,$color1,65%);
-						}
+          .ginput_container {
+            input,
+            textarea {
+              width: 100%;
+            }
 
-						.ginput_left {
-							float: left;
-							width: 45%;
-						}
+            ul.gfield_checkbox,
+            ul.gfield_radio {
+              margin-top: 8px;
 
-						.ginput_right {
-							display: inline;
-							float: right;
-							width: 45%;
-						}
-					}
+              list-style: none;
 
-					.ginput_container {
+              li {
+                margin: 0;
+                padding: 0;
 
-						input, textarea {
-							width: 100%;
+                input {
+                  width: 20px;
+                }
+              }
+            }
+          }
 
-							&:last-child {
-							}
-						}
+          .gfield_description {
+            font-size: 80%;
+            line-height: 150%;
 
-						textarea {}
+            margin-top: 7px;
 
-						ul.gfield_checkbox,
-						ul.gfield_radio {
-							margin-top: 8px;
-							list-style: none;
+            color: mix($white, $color1, 65%);
 
-							li {
-								margin: 0px;
-								padding: 0px;
+            &.validation_message {
+              font-size: 80%;
 
-								&:before {}
+              display: inline-block;
 
-								input {
-									width: 20px;
-								}
+              margin-top: 5px;
 
-								label {}
-							}
-						}
-					}
+              color: $white;
+            }
+          }
+        }
 
-					.clear-multi {
-
-						.ginput_container {
-
-							&:last-child {}
-
-							label {}
-						}
-					}
-
-					.gfield_description {
-						margin-top: 7px;
-						font-size: 80%;
-						line-height: 150%;
-						color: mix($white,$color1,65%);
-
-						&.validation_message {
-							display: inline-block;
-							margin-top: 5px;
-							font-size: 80%;
-							color: red;
-						}
-					}
-				}
-
-				&.gfield_price {
-					text-align: left;
-				}
-
-				&.gsection {
-
-					&:first-child {}
-
-					h2 {}
-
-					.gsection_description {}
-				}
-
-				label {}
-			}
-		}
-	}
-
-	.gform_footer {
-
-		input.button {}
-	}
-}
-
-.gform_confirmation_wrapper {
-
-	#gforms_confirmation_message {
-
-	}
+        &.gfield_price {
+          text-align: left;
+        }
+      }
+    }
+  }
 }

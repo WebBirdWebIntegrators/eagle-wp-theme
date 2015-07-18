@@ -1,13 +1,7 @@
-// Login
-@import "wp-login.scss";
-
+@import "wp-login";
 
 #wpadminbar {
-	position: fixed;
-
-	#wp-admin-bar-wp-logo {
-		//display: none;
-	}
+  position: fixed;
 }
 
 .size-auto,
@@ -15,328 +9,376 @@
 .size-large,
 .size-medium,
 .size-thumbnail {
-	max-width: 100%;
-	height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .post-info {
-	display: block;
-	margin: 0px;
-	//margin-top: 1em;
-	padding: 0px;
-	padding-top: 1.625em;
-	color: mix($white,$color1,50%);
-	border-top-style: solid;
-	border-top-width: 1px;
-	border-top-color: mix($white,$color1,92.5%);
-	overflow: hidden;
+  display: block;
+  overflow: hidden;
 
-	a {
-		color: inherit;
+  margin: 0;
+  //margin-top: 1em;
+  padding: 0;
+  padding-top: 1.625em;
 
-		&:hover {
-			color: $color2;
-		}
-	}
+  color: mix($white, $color1, 50%);
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: mix($white, $color1, 92.5%);
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: $color2;
+    }
+  }
 }
 
 .post-edit {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .post-edit-link {
-	display: inline-block;
-	margin: 0px;
-	margin-top: 2em;
-	padding: 5px;
-	padding-left: 12px;
-	padding-right: 12px;
-	@include font1-Regular;
-	color: $white;
-	text-decoration: none;
-	background-color: $green;
-	border-radius: 3px;
-	overflow: hidden;
-	box-sizing: border-box;
+  @include font1-regular;
 
-	&:hover {
-		color: $white;
-		background-color: $green;
-	}
+  display: inline-block;
+  overflow: hidden;
+
+  box-sizing: border-box;
+  margin: 0;
+  margin-top: 2em;
+  padding: 5px;
+  padding-right: 12px;
+  padding-left: 12px;
+
+  text-decoration: none;
+
+  color: $white;
+  border-radius: 3px;
+  background-color: $green;
+
+  &:hover {
+    color: $white;
+    background-color: $green;
+  }
 }
 
 .read-more {
-	display: inline-block;
-	background-color: mix($white,$color2,90%);
-	color: $color2;
+  display: inline-block;
+
+  color: $color2;
+  background-color: mix($white, $color2, 90%);
 }
 
 .comments {
-	margin-top: 2.5em;
-	overflow: hidden;
+  overflow: hidden;
 
-	.nocomments {
-		display: inline-block;
-		margin: 0px;
-		padding: 7px;
-		padding-left: 12px;
-		padding-right: 12px;
-		font-size: 0.75em;
-		text-transform: uppercase;
-		color: $red;
-		border-style: solid;
-		border-width: 1px;
-		border-color: mix($white,$red,75%);
-	}
+  margin-top: 2.5em;
+
+  .nocomments {
+    font-size: .75em;
+
+    display: inline-block;
+
+    margin: 0;
+    padding: 7px;
+    padding-right: 12px;
+    padding-left: 12px;
+
+    text-transform: uppercase;
+
+    color: $red;
+    border-width: 1px;
+    border-style: solid;
+    border-color: mix($white, $red, 75%);
+  }
 }
 
 #comments {
-	margin-top: 40px;
-	padding-top: 40px;
-	border-top-style: dotted;
-	border-top-width: 1px;
-	border-top-color: mix($white,$color1,75%);
-	overflow: hidden;
+  overflow: hidden;
 
-	h2 {
-	}
+  margin-top: 40px;
+  padding-top: 40px;
 
-	.comment-list {
-		margin: 0px;
-		padding: 0px;
-		list-style: none;
-		overflow: hidden;
+  border-top-width: 1px;
+  border-top-style: dotted;
+  border-top-color: mix($white, $color1, 75%);
 
-		.comment {
-			margin: 0px;
-			//margin-bottom: 30px;
-			padding: 0px;
-			list-style-type: none;
-			overflow: hidden;
 
-			&:last-child {
-				margin-bottom: 0px;
-			}
 
-			.comment-body {
-				margin-bottom: 15px;
-				padding: 30px;
-				overflow: hidden;
-				background-color: mix($white,$color2,92.5%);
+  .comment-list {
+    overflow: hidden;
 
-				.comment-author {
-					//height: 30px;
-					vertical-align: top;
+    margin: 0;
+    padding: 0;
 
-					img {
-						float: left;
-						margin-right: 20px;
-						display: inline-block;
-						width: 50px;
-						height: 50px;
-						border-style: solid;
-						border-width: 3px;
-						border-color: $white;
-						border-radius: 50px;
-						box-sizing: border-box;
-						//display: none;
-					}
-				}
+    list-style: none;
 
-				.fn {
-					@include font1-Bold;
-					font-style: normal;
+    .comment {
+      overflow: hidden;
 
-					a {
-						text-decoration: none;
-					}
-				}
+      margin: 0;
+      //margin-bottom: 30px;
+      padding: 0;
 
-				.comment-awaiting-moderation {
-					float: left;
-					//margin-left: 70px;
-					//width: 100%;
-					font-size: 0.75em;
-					font-style: normal;
-					text-transform: uppercase;
-					display: inline-block;
-					color: $red;
-				}
+      list-style-type: none;
 
-				.comment-meta {
-					margin-bottom: 15px;
-					padding-bottom: 15px;
-					padding-left: 70px;
-					font-size: 0.80em;
-					color: mix($white,$color2,40%);
-					text-transform: uppercase;
-					border-bottom-style: solid;
-					border-bottom-width: 1px;
-					border-bottom-color: mix($white,$color2,75%);
-					//overflow: hidden;
+      &:last-child {
+        margin-bottom: 0;
+      }
 
-					a {
-						color: inherit;
-						text-decoration: none;
-					}
-				}
+      .comment-body {
+        overflow: hidden;
 
-				.reply {
-					overflow: hidden;
+        margin-bottom: 15px;
+        padding: 30px;
 
-					a {
-						display: inline-block;
-						padding: 5px;
-						padding-left: 12px;
-						padding-right: 12px;
-						@include font1-Bold;
-						font-size: 0.75em;
-						line-height: normal;
-						vertical-align: middle;
-						border-style: solid;
-						border-width: 1px;
-						color: mix($white,$color2,50%);
-						border-color: mix($white,$color2,50%);
-						text-transform: uppercase;
-						text-decoration: none;
+        background-color: mix($white, $color2, 92.5%);
 
-						&:hover {
-							color: $color2;
-							border-color: mix($white,$color2,30%);
-						}
-					}
-				}
-			}
+        .comment-author {
+          //height: 30px;
+          vertical-align: top;
 
-			.children {
-				margin: 0px;
-				margin-left: 15px;
-				padding: 0px;
-				overflow: hidden;
+          img {
+            display: inline-block;
+            float: left;
 
-				.comment {
+            box-sizing: border-box;
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
 
-					&:last-child {
-						margin-bottom: 0px;
-					}
+            border-width: 3px;
+            border-style: solid;
+            border-color: $white;
+            border-radius: 50px;
+            //display: none;
+          }
+        }
 
-					.comment-body {
-						border-left-color: mix($white,$color2,85%);
-					}
-				}
-			}
-		}
-	}
+        .fn {
+          @include font1-bold;
+
+          font-style: normal;
+
+          a {
+            text-decoration: none;
+          }
+        }
+
+        .comment-awaiting-moderation {
+          //margin-left: 70px;
+          //width: 100%;
+          font-size: .75em;
+          font-style: normal;
+
+          display: inline-block;
+          float: left;
+
+          text-transform: uppercase;
+
+          color: $red;
+        }
+
+        .comment-meta {
+          font-size: .80em;
+
+          margin-bottom: 15px;
+          padding-bottom: 15px;
+          padding-left: 70px;
+
+          text-transform: uppercase;
+
+          color: mix($white, $color2, 40%);
+          border-bottom-width: 1px;
+          border-bottom-style: solid;
+          border-bottom-color: mix($white, $color2, 75%);
+          //overflow: hidden;
+
+          a {
+            text-decoration: none;
+
+            color: inherit;
+          }
+        }
+
+        .reply {
+          overflow: hidden;
+
+          a {
+            @include font1-bold;
+
+            font-size: .75em;
+            line-height: normal;
+
+            display: inline-block;
+
+            padding: 5px;
+            padding-right: 12px;
+            padding-left: 12px;
+
+            vertical-align: middle;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            color: mix($white, $color2, 50%);
+            border-width: 1px;
+            border-style: solid;
+            border-color: mix($white, $color2, 50%);
+
+            &:hover {
+              color: $color2;
+              border-color: mix($white, $color2, 30%);
+            }
+          }
+        }
+      }
+
+      .children {
+        overflow: hidden;
+
+        margin: 0;
+        margin-left: 15px;
+        padding: 0;
+
+        .comment {
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .comment-body {
+            border-left-color: mix($white, $color2, 85%);
+          }
+        }
+      }
+    }
+  }
 }
 
 .comment-respond {
-	margin-top: 40px;
-	overflow: hidden;
+  overflow: hidden;
 
-	h3 {
-		margin-top: 0px;
-		padding-top: 0px;
+  margin-top: 40px;
 
-		&:before {
-			margin-right: 10px;
-			@include fontawesome;
-			content: '\f086';
-			color: $color2;
-		}
+  h3 {
+    margin-top: 0;
+    padding-top: 0;
 
-		a {
-			text-decoration: none;
-		}
+    &:before {
+      @include fontawesome;
 
-		small {
-			display: block;
-			margin: 0px;
-			padding: 0px;
-			overflow: hidden;
-			//width: auto;
+      margin-right: 10px;
 
-			@media only screen and (min-width: $bp5) {
-				float: right;
-				display: inline-block;
-				position: relative;
-				//top: -2px;
-				width: auto;
-			}
+      content: "\f086";
 
-			a {
-				//display: inline-block;
-				margin: 0px;
-				padding: 5px;
-				padding-left: 10px;
-				padding-right: 10px;
-				@include font1-Bold;
-				font-size: 50%;
-				line-height: normal;
-				color: $color1;
-				background-color: mix($white,$color1,90%);
-				text-decoration: none;
-				text-transform: uppercase;
-				white-space: nowrap;
-				vertical-align: middle;
+      color: $color2;
+    }
 
-				&:hover {
-					color: $white;
-					background-color: $red;
-				}
-			}
-		}
-	}
+    a {
+      text-decoration: none;
+    }
 
-	.logged-in-as {
-		overflow: hidden;
-	}
+    small {
+      display: block;
+      overflow: hidden;
 
-	.comment-form-comment {
-		overflow: hidden;
+      margin: 0;
+      padding: 0;
+      //width: auto;
 
-		label {
-			@include font1-Bold;
-		}
+      @media only screen and (min-width: $bp5) {
+        position: relative;
 
-		textarea {
-			padding: 15px;
-		}
-	}
+        display: inline-block;
+        float: right;
+        //top: -2px;
 
-	.form-allowed-tags {
+        width: auto;
+      }
 
-		code {
-			margin: 0px;
-			margin-top: 10px;
-			padding: 0px;
-			display: block;
-			overflow: hidden;
-			border: none;
-			line-height: 1.50em;
-			color: $color1;
-			background: none;
-		}
-	}
+      a {
+        @include font1-bold;
 
-	.form-submit {
-		margin: 0px;
-		padding: 0px;
+        font-size: 50%;
+        line-height: normal;
+        //display: inline-block;
 
-		input[type="submit"] {
-			@include font1-Bold;
-			text-transform: uppercase;
-		}
-	}
+        margin: 0;
+        padding: 5px;
+        padding-right: 10px;
+        padding-left: 10px;
+
+        vertical-align: middle;
+        white-space: nowrap;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        color: $color1;
+        background-color: mix($white, $color1, 90%);
+
+        &:hover {
+          color: $white;
+          background-color: $red;
+        }
+      }
+    }
+  }
+
+  .logged-in-as {
+    overflow: hidden;
+  }
+
+  .comment-form-comment {
+    overflow: hidden;
+
+    label {
+      @include font1-bold;
+    }
+
+    textarea {
+      padding: 15px;
+    }
+  }
+
+  .form-allowed-tags {
+    code {
+      line-height: 1.50em;
+
+      display: block;
+      overflow: hidden;
+
+      margin: 0;
+      margin-top: 10px;
+      padding: 0;
+
+      color: $color1;
+      border: 0;
+      background: none;
+    }
+  }
+
+  .form-submit {
+    margin: 0;
+    padding: 0;
+
+    input[type="submit"] {
+      @include font1-bold;
+
+      text-transform: uppercase;
+    }
+  }
 }
 
 .sticky {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .gallery-caption {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .bypostauthor {
-	overflow: hidden;
+  overflow: hidden;
 }

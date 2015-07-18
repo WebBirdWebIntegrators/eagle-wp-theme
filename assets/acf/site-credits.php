@@ -2,7 +2,7 @@
 
 if( function_exists('acf_add_local_field_group') ):
 
-$name_path = 'ts_site_credits';
+$name_path = 'wb_ts_site_credits';
 
 acf_add_local_field_group(array (
 	'key' => 'group_' . $name_path,

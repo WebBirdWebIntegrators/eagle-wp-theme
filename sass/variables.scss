@@ -1,45 +1,25 @@
-
-$base-url: "/wp-content/themes/art-vision/";
+$base-url: "/wp-content/themes/eagle2/";
 
 // Breakpoints
+$bp1: 25em; 			                 // Smartphone (portrait)
+$bp2: 30em; 			                 // Smartphone (landscape)
+$bp3: 37.5em; 		                 // Smartphone HD (+600 pixels)
+$bp4: 48em; 			                 // Tablet (portrait)
+$bp5: 62em; 			                 // Tablet (landscape) + Small Desktop
+$bp6: 93.75em; 		                 // Large Desktop
 
-$bp1: 25em; 			// smartphone (portrait)
-$bp2: 30em; 			// smartphone (landscape)
-$bp3: 37.5em; 			// smartphone HD (+600 pixels)
-$bp4: 48em; 			// tablet (portrait)
-$bp5: 62em; 			// tablet (landscape) + monitor
-$bp6: 93.75em; 			// large monitor
-
-
-// Text colors
-
-$color1: #333333;
-$color2: #f29141;
-$color3: #e52743;
-
-$admin-color1: #1e8cbe;
-
-$red: red;
-$orange: rgb(240,120,0);
-$green: rgb(51,196,83);
-$yellow: rgb(248, 238, 202);
-
-$black: rgb(0,0,0);
-$white:	rgb(255,255,255);
-
-
-// Global colors
-
-$error-color: rgb(255,0,0); // error color (ex.red)
-/* @attention-color:;	 */	// attention color (ex. orange / yellow)
-$confirmation-color: rgb(70,180,30); // information color; useally the okay color (ex. green)
-
-$statecolor1: rgb(32,166,35);
-
+// Colors
+$color1: #333;                  // Global Text Color
+$color2: #1e8cbe;                  // Secondary Color (mostly used for headings & buttons)
+//$color3: #e52743;                  // Extra Color
+$admin-color1: #1e8cbe;            // Identique to the blue WordPress color
+$red: #f00;                         // Global Red Color
+$orange: rgb(240, 120, 0);           // Global Orange Color
+$green: rgb(51, 196, 83);            // Global Green Color
+$black: #000;                   // Black Color
+$white:	#fff;                   // White Color
 
 // Fonts
-
-$font-Default-Font-Family: Helvetica, Arial, Geneva, Verdana;
-
-$font1: 'Raleway';
-$font2: 'Raleway';
+$base-font-size: 1em;
+$base-font-family: Helvetica, Arial, Geneva, Verdana;
+// Don't forget to set the fonts in fonts.scss

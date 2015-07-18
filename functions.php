@@ -22,39 +22,6 @@ function webbird_theme_setup()
     load_theme_textdomain( 'eagle', get_template_directory() . '/languages' );
 }
 
-// 1. customize ACF path
-add_filter('acf/settings/path', 'my_acf_settings_path');
-
-function my_acf_settings_path( $path ) {
-
-    // update path
-    $path = get_stylesheet_directory() . '/plugins/advanced-custom-fields-pro/';
-
-    // return
-    return $path;
-
-}
-
-// 2. customize ACF dir
-add_filter('acf/settings/dir', 'my_acf_settings_dir');
-
-function my_acf_settings_dir( $dir ) {
-
-    // update path
-    $dir = get_stylesheet_directory_uri() . '/plugins/advanced-custom-fields-pro/';
-
-    // return
-    return $dir;
-
-}
-
-// 3. Hide ACF field group menu item
-add_filter('acf/settings/show_admin', '__return_false');
-
-
-// 4. Include ACF
-include_once( get_stylesheet_directory() . '/plugins/advanced-custom-fields-pro/acf.php' );
-
 add_action('init', 'load_exported_fields');
 
 function load_exported_fields(){
@@ -87,7 +54,7 @@ function webbird_custom_image_sizes( $sizes ) {
     ) );
 }
 
-register_nav_menus(
+register_nav_menus (
 	array (
 		'header-mnav' => 'Header - Main navigation',
 		'header-fnav' => 'Header - Functional navigation',
@@ -160,20 +127,11 @@ if ( ! function_exists( 'webbird_sidebar_default' ) ) {
 // Register Sidebar
 function webbird_sidebar_default() {
 
-  if( get_field('ts_sidebar_setting__title_setting__style', 'option') === 'active' ) {
-    update_field('ts_sidebar_setting__title_setting__style', 'option', 'active');
-		$uppercase = 'style="text-transform: uppercase"';
-	} else {
-    $uppercase = '';
-  }
-
-	// Set the Uppercase Style
-
-	if( get_field('wb_554e243f8e63f', 'option') === 'yes' ) {
-		$uppercase = 'style="text-transform: uppercase"';
-	} else {
-		$uppercase = '';
-	}
+  // if( get_field('ts_sidebar_setting__title_setting__style', 'option') === 'uppercase' ) {
+	// 	$uppercase = 'style="text-transform: uppercase"';
+	// } else {
+  //   $uppercase = '';
+  // }
 
 	$args = array(
 		'id'            => 'sidebar1',
@@ -182,7 +140,7 @@ function webbird_sidebar_default() {
 		'class'         => 'sidebar-default',
 		'before_widget' => '<div class="sidebar-default %2$s">',
 		'after_widget'  => '</div>',
-		'before_title' => '<h2 class="widget-title"' . $uppercase . '>',
+		'before_title' => '<h2 class="widget-title"' . '>',
 		'after_title' => '</h3>',
 	);
 	register_sidebar( $args );
