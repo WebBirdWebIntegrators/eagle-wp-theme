@@ -1211,5 +1211,98 @@ header {
     &.mobile {
       display: none;
     }
+
+    &.desktop {
+      display: block;
+      position: relative;
+
+      ul {
+        position: relative;
+        display: table;
+        margin: 0 auto;
+        padding: 0;
+        list-style: none;
+        width: 90%;
+
+        li {
+          display: table-cell;
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+
+          &.site-logo {
+            padding-right: 5%;
+            text-align: left;
+            vertical-align: middle;
+            white-space: nowrap;
+            width: 1px;
+
+            img {
+              height: 75px;
+              width: auto;
+            }
+          }
+
+          &.navigation {
+            text-align: right;
+            vertical-align: middle;
+
+            nav {
+              position: relative;
+
+              &.fnav {
+                position: relative;
+              }
+
+              &.mnav {
+                text-align: right;
+                position: relative;
+
+                ul {
+                  position: relative;
+                  float: right;
+                  display: inline-block;
+                  margin: 0;
+                  padding: 0;
+                  list-style: none;
+                  width: auto;
+
+                  li {
+                    padding-left: 1em;
+                    padding-right: 1em;
+                    list-style-type: none;
+
+                    &.current-menu-item,
+                    &.current_page_item {
+
+                      a {
+                        @include font1-bold;
+                        color: $color1;
+                      }
+                    }
+
+                    &:first-of-type {
+                      padding-left: 0;
+                    }
+
+                    &:last-of-type {
+                      padding-right: 0;
+                    }
+
+                    a {
+                      display: inline-block;
+                      text-transform: uppercase;
+                      text-decoration: none;
+                      @include font1-regular;
+                      color: mix($white, $color1, 50%);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
