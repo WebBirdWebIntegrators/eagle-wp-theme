@@ -739,41 +739,72 @@ header {
       left: 0;
       right: 0;
       top: 0;
-      bottom: 0;
-      z-index: 99;
-      background-color: rgba($color2, .95);
+      //bottom: 0;
+      z-index: 90;
 
-      .menu-icon {
+      .menu {
         position: relative;
-        background-color: yellow;
+        margin: 0;
+        z-index: 90;
+
+        .menu-icon {
+          position: relative;
+          padding: em(15px);
+
+          i {
+            font-size: em(30px);
+            color: $white;
+          }
+        }
       }
 
-      ul {
-        position: relative;
-        margin: em(30px);
-        padding: 0;
-        list-style: none;
+      .menu-active {
+        display: none;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba($color2, .95);
+        z-index: 99;
 
-        li {
-          margin: 0;
-          padding: 0;
-          padding-top: 0.5em;
-          padding-bottom: 0.5em;
-          list-style-type: none;
-          text-align: center;
-          border-bottom: 1px solid rgba($white, .25);
+        .menu-icon {
+          position: relative;
+          padding: em(15px);
 
-          &:last-of-type {
-            border-bottom: 0;
-            padding-bottom: 0;
-          }
-
-          a {
-            display: inline;
-            text-decoration: none;
-            text-transform: uppercase;
-            @include font1-bold;
+          i {
+            font-size: em(30px);
             color: $white;
+          }
+        }
+
+        ul {
+          position: relative;
+          margin: em(30px);
+          padding: 0;
+          list-style: none;
+
+          li {
+            margin: 0;
+            padding: 0;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            list-style-type: none;
+            text-align: center;
+            border-bottom: 1px solid rgba($white, .25);
+
+            &:last-of-type {
+              border-bottom: 0;
+              padding-bottom: 0;
+            }
+
+            a {
+              display: inline;
+              text-decoration: none;
+              text-transform: uppercase;
+              @include font1-bold;
+              color: $white;
+            }
           }
         }
       }

@@ -1265,40 +1265,60 @@ header {
     left: 0;
     right: 0;
     top: 0;
-    bottom: 0;
-    z-index: 99;
-    background-color: rgba(30, 140, 190, 0.95); }
-    header nav.mobile .menu-icon {
+    z-index: 90; }
+    header nav.mobile .menu {
       position: relative;
-      background-color: yellow; }
-    header nav.mobile ul {
-      position: relative;
-      margin: 30px;
-      padding: 0;
-      list-style: none; }
-      header nav.mobile ul li {
-        margin: 0;
-        padding: 0;
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-        list-style-type: none;
-        text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
-        header nav.mobile ul li:last-of-type {
-          border-bottom: 0;
-          padding-bottom: 0; }
-        header nav.mobile ul li a {
-          display: inline;
-          text-decoration: none;
-          text-transform: uppercase;
-          font-weight: normal;
-          font-style: normal;
-          -webkit-font-smoothing: antialiased;
-          text-rendering: optimizeLegibility;
-          -webkit-text-size-adjust: 100%;
-          font-family: "Raleway", Helvetica, Arial, Geneva, Verdana;
-          font-weight: 700;
+      margin: 0;
+      z-index: 90; }
+      header nav.mobile .menu .menu-icon {
+        position: relative;
+        padding: 15px; }
+        header nav.mobile .menu .menu-icon i {
+          font-size: 30px;
           color: #fff; }
+    header nav.mobile .menu-active {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(30, 140, 190, 0.95);
+      z-index: 99; }
+      header nav.mobile .menu-active .menu-icon {
+        position: relative;
+        padding: 15px; }
+        header nav.mobile .menu-active .menu-icon i {
+          font-size: 30px;
+          color: #fff; }
+      header nav.mobile .menu-active ul {
+        position: relative;
+        margin: 30px;
+        padding: 0;
+        list-style: none; }
+        header nav.mobile .menu-active ul li {
+          margin: 0;
+          padding: 0;
+          padding-top: 0.5em;
+          padding-bottom: 0.5em;
+          list-style-type: none;
+          text-align: center;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
+          header nav.mobile .menu-active ul li:last-of-type {
+            border-bottom: 0;
+            padding-bottom: 0; }
+          header nav.mobile .menu-active ul li a {
+            display: inline;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: normal;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            -webkit-text-size-adjust: 100%;
+            font-family: "Raleway", Helvetica, Arial, Geneva, Verdana;
+            font-weight: 700;
+            color: #fff; }
 
 #body {
   background-color: whitesmoke; }
