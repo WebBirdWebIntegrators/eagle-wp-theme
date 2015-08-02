@@ -421,7 +421,6 @@ body {
         padding-right: 5%;
         width: 65%;
         vertical-align: top;
-        background-color: yellow;
       }
 
       aside {
@@ -430,7 +429,6 @@ body {
         width: 35%;
         padding-right: 5%;
         vertical-align: top;
-        background-color: blue;
       }
     }
   }
@@ -1201,5 +1199,17 @@ body {
     padding: 40px;
     padding-right: 5%;
     padding-left: 5%;
+  }
+}
+
+// NEW LAYOUT
+
+header {
+
+  nav {
+
+    &.mobile {
+      display: none;
+    }
   }
 }

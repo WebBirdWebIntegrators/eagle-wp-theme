@@ -1,6 +1,56 @@
 <?php get_header(); ?>
 
 <div id="body">
+	<div id="archive">
+		<div class="archive-wrapper">
+			<main class="main-content" role="main">
+				<?php if ( have_posts() ) : ?>
+					<?php while ( have_posts() ) : the_post(); ?>
+						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+							<div class="post-image">
+								<a href="<?php the_permalink(); ?>">
+									<?php the_post_thumbnail('large'); ?>
+								</a>
+							</div>
+							<div class="post-text">
+								<a href="<?php the_permalink(); ?>">
+									<?php the_title('<h2>', '</h2>'); ?>
+								</a>
+								<div class="post-info">
+									Post info ...
+								</div>
+								<div class="post-excerpt">
+									<?php the_excerpt(); ?>
+								</div>
+								<div class="post-read-more">
+									<a href="" class="button read-more"><?php _e('Lees verder', 'eagle'); ?></a>
+								</div>
+							</div>
+						</article>
+					<?php endwhile; ?>
+					<?php
+						the_posts_pagination( array(
+							'prev_text'          => __( 'Previous page', 'eagle' ),
+							'next_text'          => __( 'Next page', 'eagle' ),
+							'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'eagle' ) . ' </span>',
+							)
+						);
+					?>
+					<?php
+						if ( comments_open() || get_comments_number() ) :
+							comments_template();
+						endif;
+					?>
+				<?php else : ?>
+					<?php get_template_part( 'content', 'none' ); ?>
+				<?php endif; ?>
+			</main>
+			<?php get_sidebar(); ?>
+		</div>
+	</div>
+</div>
+
+<div id="body">
 	<div class="b1">
 		<div class="cntr">
 			<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
@@ -13,9 +63,9 @@
 					<span>Tag</span><div class="divider">/</div><?php single_tag_title(); ?>
 				</h1>
 				<div class="description">
-					<?php 
+					<?php
 						$description = tag_description();
-						echo $description; 
+						echo $description;
 					?>
 				</div>
 			<?php } elseif( is_archive() ) { ?>
@@ -31,9 +81,9 @@
 					//echo $taxonomyTitle->labels->name;
 					echo '<div class="divider">/</div>';
 					echo $taxonomy->name;
-					echo '</h1>'; 
+					echo '</h1>';
 					echo '<div class="description">' . $taxonomy->description . '</div>';
-				?>		
+				?>
 			<?php } elseif (is_day()) { ?>
 				<h1>Archive for <?php the_time('F jS, Y'); ?></h1>
 			<?php } elseif (is_month()) { ?>
@@ -45,16 +95,16 @@
 			<?php } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
 				<h1>Blog Archives</h1>
 			<?php } ?>
-			
+
 		</div>
 	</div>
 	<div class="b2">
 		<div class="cntr archive">
 			<div class="content with-sidebar">
-				
+
 			<?php
 				if( is_taxonomy( 'discography_categories') ) {
-					
+
 					$args2 = array(
 						'show_option_all'    => '',
 						'orderby'            => 'name',
@@ -80,15 +130,15 @@
 						'pad_counts'         => 0,
 						'taxonomy'           => 'discography_categories',
 				    );
-				    
+
 				    echo wp_list_categories( $args2 );
-					
+
 					echo do_shortcode('[webbird-discography-category-listing]');
 				}
 			?>
 
 			<?php if (have_posts()) : ?>
-		
+
 				<?php while ( have_posts() ) : the_post(); ?>
 					<div <?php post_class( 'post' ) ?>>
 						<?php if ( has_post_thumbnail() ) : ?>
@@ -104,7 +154,7 @@
 									<?php the_post_thumbnail('medium-square'); ?>
 								</a>
 							</div>
-						<?php endif ?>	
+						<?php endif ?>
 						<div class="content">
 							<h2>
 								<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
@@ -124,9 +174,9 @@
 						</div>
 					</div>
 				<?php endwhile; ?>
-		
+
 			<?php else :
-		
+
 				if ( is_category() ) { // If this is a category archive
 					printf("<h2>Sorry, but there aren't any posts in the %s category yet.</h2>", single_cat_title('',false));
 				} else if ( is_date() ) { // If this is a date archive
@@ -137,14 +187,14 @@
 				} else {
 					echo("<h2>No posts found.</h2>");
 				}
-		
+
 			endif;
 		?>
 
 		</div>
 			<div class="sidebar">
 				<?php if ( is_tag() ) { ?>
-					
+
 				<?php } else { ?>
 					<?php if ( ! get_post_type( array('page', 'attachment', 'post') ) ) { ?>
 						<div class="sidebar-default taxonomy-terms">
@@ -164,7 +214,7 @@
 							        	  'current_category' => 1,
 							        	  'taxonomy' => $tax,
 							        	);
-										
+
 										echo '<h2>';
 											$taxonomyTitle = get_taxonomy( get_query_var( 'taxonomy' ) );
 											echo $taxonomyTitle->labels->name;

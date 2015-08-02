@@ -1,1 +1,3 @@
-... sidebar ...
+<aside class="sidebar">
+  
+</aside>

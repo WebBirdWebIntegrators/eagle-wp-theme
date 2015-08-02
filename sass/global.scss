@@ -40,12 +40,17 @@ p {
 }
 
 a {
+  display: inline;
   color: $color1;
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   &:hover {
     color: $color2;
+
+    h2 {
+      color: inherit;
+    }
   }
 }
 
@@ -69,7 +74,7 @@ h6 {
   padding-top: .75em;
   padding-bottom: .75em;
 
-  color: $color2;
+  color: $color1;
 }
 
 h1 {
@@ -77,14 +82,19 @@ h1 {
 
   font-size: 2em;
   line-height: 1.25em;
+
+  @media only screen and (min-width: $bp5) {
+    font-size: 3em;
+    //line-height: 1.05em;
+  }
 }
 
 
 h2 {
   @include font2-regular;
 
-  font-size: 2em;
-  line-height: normal;
+  font-size: 1.625em;
+  line-height: 1.15384615em;
 
   &:after {
     position: relative;
@@ -97,7 +107,7 @@ h2 {
 
     content: "";
 
-    background-color: mix($white, $color2, 75%);
+    background-color: $color1;
   }
 }
 
@@ -684,6 +694,7 @@ input[type="radio"] {
     }
 
     &.aligncenter {
+      margin: 0 auto;
       text-align: center;
     }
 
