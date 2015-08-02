@@ -2980,6 +2980,8 @@ header nav.desktop {
       display: table;
       margin: 0 auto;
       padding: 0;
+      padding-top: 30px;
+      padding-bottom: 30px;
       list-style: none;
       width: 90%; }
       header nav.desktop ul li {
@@ -3042,7 +3044,21 @@ header nav.desktop {
                     -webkit-text-size-adjust: 100%;
                     font-family: "", "Raleway", Helvetica, Arial, Geneva, Verdana;
                     font-weight: 400;
-                    color: #999999; } }
+                    color: #999999;
+                    transition-delay: 0s;
+                    transition-duration: 0.3s;
+                    transition-property: color;
+                    transition-timing-function: ease-in-out; }
+                    header nav.desktop ul li.navigation nav.mnav ul li a:hover {
+                      color: #333; }
+                  header nav.desktop ul li.navigation nav.mnav ul li i {
+                    color: #999999;
+                    transition-delay: 0s;
+                    transition-duration: 0.3s;
+                    transition-property: color;
+                    transition-timing-function: ease-in-out; }
+                    header nav.desktop ul li.navigation nav.mnav ul li i:hover {
+                      color: #333; } }
 @media only screen and (min-width: 93.75em) {
   body {
     font-size: 18px; } }

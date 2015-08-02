@@ -1221,6 +1221,8 @@ header {
         display: table;
         margin: 0 auto;
         padding: 0;
+        padding-top: em(30px);
+        padding-bottom: em(30px);
         list-style: none;
         width: 90%;
 
@@ -1295,6 +1297,26 @@ header {
                       text-decoration: none;
                       @include font1-regular;
                       color: mix($white, $color1, 50%);
+                      transition-delay: 0s;
+                      transition-duration: 0.3s;
+                      transition-property: color;
+                      transition-timing-function: ease-in-out;
+
+                      &:hover {
+                        color: $color1;
+                      }
+                    }
+
+                    i {
+                      color: mix($white, $color1, 50%);
+                      transition-delay: 0s;
+                      transition-duration: 0.3s;
+                      transition-property: color;
+                      transition-timing-function: ease-in-out;
+
+                      &:hover {
+                        color: $color1;
+                      }
                     }
                   }
                 }

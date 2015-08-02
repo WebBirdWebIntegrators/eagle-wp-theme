@@ -82,27 +82,34 @@
 					Functional navigation
 				</nav>
 				<nav class="mnav">
-					<?php {
-						$mnav = array(
-							'theme_location'  => 'mnav',
-							'menu'            => '',
-							'container'       => '',
-							'container_class' => '',
-							'container_id'    => '',
-							'menu_class'      => 'mnav',
-							'menu_id'         => 'mnav-desktop',
-							'echo'            => true,
-							'fallback_cb'     => '',
-							'before'          => '',
-							'after'           => '',
-							'link_before'     => '',
-							'link_after'      => '',
-							'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-							'depth'           => 0,
-							'walker'          => ''
-						);
-						wp_nav_menu( $mnav ); }
-					?>
+					<ul>
+						<?php {
+							$mnav = array(
+								'theme_location'  => 'mnav',
+								'menu'            => '',
+								'container'       => '',
+								'container_class' => '',
+								'container_id'    => '',
+								'menu_class'      => 'mnav',
+								'menu_id'         => 'mnav-desktop',
+								'echo'            => true,
+								'fallback_cb'     => '',
+								'before'          => '',
+								'after'           => '',
+								'link_before'     => '',
+								'link_after'      => '',
+								'items_wrap'      => '%3$s',
+								'depth'           => 0,
+								'walker'          => ''
+							);
+							wp_nav_menu( $mnav ); }
+						?>
+						<li>
+							<a href="javascript:void(0);">
+								<i class="fa fa-search"></i>
+							</a>
+						</li>
+					</ul>
 				</nav>
 			</li>
 		</ul>
